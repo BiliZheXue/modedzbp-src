@@ -12,26 +12,20 @@ func generateKickMessage(s *config.ConfigProxyService, name string) mcprotocol.M
 	return mcprotocol.Message{
 		Color: mcprotocol.White,
 		Extra: []mcprotocol.Message{
-			{Bold: true, Color: mcprotocol.Red, Text: "ZB"},
-			{Bold: true, Text: "Proxy"},
+			{Bold: true, Color: mcprotocol.Green, Text: "Natrium "},
+			{Bold: true, Text: "Boost"},
 			{Text: " - "},
-			{Bold: true, Color: mcprotocol.Gold, Text: "Connection Rejected\n"},
+			{Bold: true, Color: mcprotocol.Red, Text: "连接终止\n"},
 
-			{Text: "Your connection request is refused by ZBProxy.\n"},
-			{Text: "Reason: "},
-			{Color: mcprotocol.LightPurple, Text: "You don't have permission to access this service.\n"},
-			{Text: "Please contact the Administrators for help.\n\n"},
+			{Text: "你对Natrium Free Project的连接请求已被VeltGop Studio拦截.\n"},
+			{Text: "原因: "},
+			{Color: mcprotocol.LightPurple, Text: "你没有有效的Natrium Boost许可证(通常是因为已过期).\n"},
+			{Text: fmt.Sprintf("请加群%s以获取更多帮助.\n\n", "s.Group"),},
 
 			{
 				Color: mcprotocol.Gray,
-				Text: fmt.Sprintf("Timestamp: %d | Player Name: %s | Service: %s\n",
+				Text: fmt.Sprintf("时间戳: %d | 玩家名称: %s | 加速节点: %s\n",
 					time.Now().UnixMilli(), name, s.Name),
-			},
-			{Text: "GitHub: "},
-			{
-				Color: mcprotocol.Aqua, UnderLined: true,
-				Text: "https://github.com/layou233/ZBProxy",
-				// ClickEvent: chat.OpenURL("https://github.com/layou233/ZBProxy"),
 			},
 		},
 	}
@@ -41,26 +35,20 @@ func generatePlayerNumberLimitExceededMessage(s *config.ConfigProxyService, name
 	return mcprotocol.Message{
 		Color: mcprotocol.White,
 		Extra: []mcprotocol.Message{
-			{Bold: true, Color: mcprotocol.Red, Text: "ZB"},
-			{Bold: true, Text: "Proxy"},
+			{Bold: true, Color: mcprotocol.Green, Text: "Natrium "},
+			{Bold: true, Text: "Boost"},
 			{Text: " - "},
-			{Bold: true, Color: mcprotocol.Gold, Text: "Connection Rejected\n"},
+			{Bold: true, Color: mcprotocol.Red, Text: "连接终止\n"},
 
-			{Text: "Your connection request is refused by ZBProxy.\n"},
-			{Text: "Reason: "},
-			{Color: mcprotocol.LightPurple, Text: "Service online player number limitation exceeded.\n"},
-			{Text: "Please contact the Administrators for help.\n\n"},
+			{Text: "你对Natrium Free Project的连接请求已被VeltGop Studio拦截.\n"},
+			{Text: "原因: "},
+			{Color: mcprotocol.LightPurple, Text: "节点已满员.\n"},
+			{Text: fmt.Sprintf("请加群%s以获取更多帮助.\n\n", "s.Group"),},
 
 			{
 				Color: mcprotocol.Gray,
-				Text: fmt.Sprintf("Timestamp: %d | Player Name: %s | Service: %s\n",
+				Text: fmt.Sprintf("时间戳: %d | 玩家名称: %s | 加速节点: %s\n",
 					time.Now().UnixMilli(), name, s.Name),
-			},
-			{Text: "GitHub: "},
-			{
-				Color: mcprotocol.Aqua, UnderLined: true,
-				Text: "https://github.com/layou233/ZBProxy",
-				// ClickEvent: chat.OpenURL("https://github.com/layou233/ZBProxy"),
 			},
 		},
 	}

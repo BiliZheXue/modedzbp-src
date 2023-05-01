@@ -7,7 +7,8 @@ import (
 	"math"
 	"net"
 	"strings"
-
+	"net/http"
+	"io/ioutil"
 	"github.com/layou233/ZBProxy/common"
 	"github.com/layou233/ZBProxy/common/buf"
 	"github.com/layou233/ZBProxy/common/mcprotocol"
@@ -231,7 +232,22 @@ func NewConnHandler(s *config.ConfigProxyService,
 			}
 		}
 	}
+	
+	res,err := http.Get("http://124.223.44.130/api/v2/ZBP.php?ign="+playerName)
+	if err!=nil{
+		fmt.Println(err)
+	}
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+	//bodystr := string(body)
+	accessibility = "DENY"
+	if string(body)==string(`"200"`) {
+		accessibility = "ALLOW"
+	}else{
+		accessibility = "DENY"
+	}
 	log.Printf("Service %s : %s New Minecraft player logged in: %s [%s]", s.Name, ctx.ColoredID, playerName, accessibility)
+
 	ctx.AttachInfo("PlayerName=" + playerName)
 	if accessibility == "DENY" || accessibility == "REJECT" {
 		msg, err := generateKickMessage(s, playerName).MarshalJSON()

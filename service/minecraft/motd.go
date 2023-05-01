@@ -5,7 +5,6 @@ import (
 
 	"github.com/layou233/ZBProxy/config"
 	"github.com/layou233/ZBProxy/service/transfer"
-	"github.com/layou233/ZBProxy/version"
 )
 
 type motdObject struct {
@@ -37,7 +36,7 @@ func generateMOTD(protocolVersion int, s *config.ConfigProxyService, options *tr
 			Name     string `json:"name"`
 			Protocol int    `json:"protocol"`
 		}{
-			Name:     "ZBProxy " + version.Version,
+			Name:     "\u4e3b\u64ad\u4ee3\u7406 By Layou233",
 			Protocol: protocolVersion,
 		},
 		Players: struct {
