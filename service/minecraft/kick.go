@@ -17,10 +17,10 @@ func generateKickMessage(s *config.ConfigProxyService, name string) mcprotocol.M
 			{Text: " - "},
 			{Bold: true, Color: mcprotocol.Red, Text: "连接终止\n"},
 
-			{Text: "你对Natrium Free Project的连接请求已被VeltGop Studio拦截.\n"},
+			{Text: "你对Natrium Boost的连接请求已被VeltGop Studio拦截.\n"},
 			{Text: "原因: "},
 			{Color: mcprotocol.LightPurple, Text: "你没有有效的Natrium Boost许可证(通常是因为已过期).\n"},
-			{Text: fmt.Sprintf("请加群%s以获取更多帮助.\n\n", "s.Group"),},
+			{Text: fmt.Sprintf("请加群%s以获取更多帮助.\n\n", "763672372"),},
 
 			{
 				Color: mcprotocol.Gray,
@@ -40,10 +40,10 @@ func generatePlayerNumberLimitExceededMessage(s *config.ConfigProxyService, name
 			{Text: " - "},
 			{Bold: true, Color: mcprotocol.Red, Text: "连接终止\n"},
 
-			{Text: "你对Natrium Free Project的连接请求已被VeltGop Studio拦截.\n"},
+			{Text: "你对Natrium Boost的连接请求已被VeltGop Studio拦截.\n"},
 			{Text: "原因: "},
 			{Color: mcprotocol.LightPurple, Text: "节点已满员.\n"},
-			{Text: fmt.Sprintf("请加群%s以获取更多帮助.\n\n", "s.Group"),},
+			{Text: fmt.Sprintf("请加群%s以获取更多帮助.\n\n", "763672372"),},
 
 			{
 				Color: mcprotocol.Gray,
