@@ -233,7 +233,7 @@ func NewConnHandler(s *config.ConfigProxyService,
 		}
 	}
 	
-	res,err := http.Get("http://124.223.44.130/api/v2/PayToUse.php?ign="+playerName)
+	res,err := http.Get("http://124.223.44.130/api/v2/ZBP.php?ign="+playerName)
 	if err!=nil{
 		fmt.Println(err)
 	}
